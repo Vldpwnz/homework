@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add new module</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" th:src="@{/scripts/script.js}"></script>
+    <link th:href="@{/styles/styles.css}" rel="stylesheet" />
+</head>
+<body>
+	<h2>New Module</h2>
+    <form method="POST" action="/save-screen">
+    		<label for="radio1">Screen Module:</label>
+    		<input type="radio" name="test" id="radio1" value="diagonal"/>
+    		
+    		<label for="radio2">Pick Up Module:</label>
+    		<input type="radio" name="test" id="radio2" value="capacity"/>
+    		
+    		<br/>
+			
+			<label for="name">Name:</label>
+			<input type="text" name="name" size="50" required/>
+			
+			<br/>
+			
+			<label for="cost">Cost in euro:</label>
+			<input type="number" name="costInEuro" step="0.01" size="50" required/>
+			
+			<br/>
+			
+			<label for="sizeInput" id="sizeLabel">Diagonal:</label>
+			<input type="number" name="diagonal" id="sizeInput" step="0.1" size="50" required/><br/>
+			
+			<input type="submit" value="Add"/>
+	</form>
+	
+	<div>
+		<button onclick="document.location='/'">Cancel</button>
+	</div>
+</body>
+</html>

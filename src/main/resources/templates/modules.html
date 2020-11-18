@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/styles/styles.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>Modules</title>
+</head>
+<body>
+
+<div>
+	<h2>Modules</h2>
+</div>
+
+<div>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Module Type</th>
+				<th>Cost in euro</th>
+				<th>Capacity in square meters</th>
+				<th>Diagonal</th>
+			</tr>	
+		</thead>
+		
+		<tbody>
+			<tr th:if="${modules.empty}">
+				<td>No modules</td>
+			</tr>
+			
+			<tr th:each="module: ${modules}">
+				<td th:text="${module.id}">Id</td>
+				<td th:text="${module.name}">Name</td>
+				<td th:text="${module instanceof T(com.vladyslav.webapp.model.PickUpModule)} ? 'Pick up module' : ' Screen module'">Module Type</td>
+				<td th:text="${module.costInEuro}">Cost in euro</td>
+				<td th:text="${module instanceof T(com.vladyslav.webapp.model.PickUpModule)} ? ${module.capacityInSqMeters} : ''">Capacity in square meters</td>
+				<td th:text="${module instanceof T(com.vladyslav.webapp.model.ScreenModule)} ? ${module.diagonal} : ''">Diagonal</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>
+
+<div>
+	<button onclick="document.location='add-module'">Add Module</button>
+</div>
+	
+
+
+</body>
+</html>
