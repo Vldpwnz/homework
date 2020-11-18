@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	
 	radioButtons.forEach((item) => item.addEventListener('change', () => {
 		if (item.checked && item.value === 'diagonal') {
-			sizeLabel.innerHTML= 'Diagonal:';
+			sizeLabel.innerHTML= 'Diagonal, inches:';
 			sizeInput.name ='diagonal';
 			form.action = '/save-screen';
 		} else if (item.checked && item.value === 'capacity') {
-			sizeLabel.innerHTML= 'Capacity:';
+			sizeLabel.innerHTML= 'Capacity, m²:';
 			sizeInput.name ='capacityInSqMeters';
 			form.action = '/save-pickUp';
 		}
